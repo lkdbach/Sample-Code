@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function (app, passport) {
+    app.get('/', function (req, res) {
+        res.render('index.ejs')
+    });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+    app.get('/login', function (req, res) {
+        res.render('login.ejs', {message: req.flash('loginMessage')})
+    });
 
-module.exports = router;
+    app.get('/signup', function (req, res) {
+        res.render('signup.ejs', {message: req.flash('signupMessage')})
+    });
+
+};
