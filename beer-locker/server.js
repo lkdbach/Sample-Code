@@ -1,27 +1,21 @@
 var express = require('express');
 var mongoose = require('mongoose');
-
+var bodyParser = require('body-parser');
 
 // Create our Express application
 var app = express();
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
+app.use(bodyParser.json());
 
 // Use environment defined port or 3000
 var port = process.env.PORT || 3000;
 
-// Create our Express router
-var router = express.Router();
-
-// Initial dummy route for testing
-// http://localhost:3000/api
-router.get('/', function(req, res) {
-    res.json({ message: 'You are running dangerously low on beer!' });
-});
-
-// Register all our routes with /api
-app.use('/api', router);
-
+var routes = require('./api/route/routes'); //importing route
+routes(app); //register the route
 
 // Start the server
 app.listen(port);
