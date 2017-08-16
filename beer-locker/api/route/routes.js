@@ -1,4 +1,4 @@
-modules.exports = function (app) {
+module.exports = function (app) {
     var userController = require('../controller/userController');
 
     app.route('/signup')

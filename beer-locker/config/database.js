@@ -4,7 +4,7 @@ module.exports = {
         'connectionLimit': 10,
         'host': 'localhost',
         'user': 'root',
-        'password': '12345'
+        'password': '1234'
 
     },
     'database': 'user_api',

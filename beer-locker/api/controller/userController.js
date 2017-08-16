@@ -13,9 +13,9 @@ exports.sign_up = function (req, res) {
         password: req.body.user.password
     };
     connection.query('SELECT username FROM users WHERE username = ?', [newUser.username], function (err, rows) {
-        connection.release();
+
         if (err) {
-            throw err;
+            return res.json(err);
         }
         if (rows.length) {
             return res.json({message: 'username already exists'})
@@ -26,7 +26,7 @@ exports.sign_up = function (req, res) {
             connection.query('INSERT INTO users ( username, password ) values (?, ?)', [newUser.username, newUser.password],
                 function (err, rows) {
                     if (err) {
-                        throw err;
+                        return res.json(err);
                     }
 
                     newUser.id = rows.insertId;
