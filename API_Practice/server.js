@@ -1,6 +1,8 @@
 var express = require('express');
-var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var unless = require('express-unless');
+var jwt = require('express-jwt')
+var config = require('./config/database');
 
 // Create our Express application
 var app = express();
@@ -8,6 +10,13 @@ var app = express();
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+var jwtCheck = jwt({
+    secret: config.secret
+});
+
+jwtCheck.unless = unless;
+app.use(jwtCheck.unless({path: ['/signup', '/login']}));
 
 app.use(bodyParser.json());
 
@@ -19,4 +28,4 @@ routes(app); //register the route
 
 // Start the server
 app.listen(port);
-console.log('Insert beer on port ' + port);
+console.log('Host is listening on port ' + port);

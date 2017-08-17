@@ -1,12 +1,13 @@
-// config/database.js
+// cd be/database.js
 module.exports = {
     'connection': {
         'connectionLimit': 10,
         'host': 'localhost',
         'user': 'root',
-        'password': '1234'
+        'password': '1234',
+        'database': 'user_api'
 
     },
-    'database': 'user_api',
-    'users_table': 'users'
+    'users_table': 'users',
+    'secret': 'bach'
 };
