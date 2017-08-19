@@ -1,0 +1,11 @@
+declared-services:
+  conversation-service:
+    label: conversation
+    plan: free
+applications:
+- services:
+   - conversation-service
+  name: text-bot
+  command: npm start
+  path: .
+  memory: 512M

@@ -1,0 +1,70 @@
+﻿<html>
+
+<head>
+	<base href="/">
+	<title>SMACNEW Chatbot</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="og:image" content="conversation.svg" />
+	<meta property="og:title" content="Conversation Chat Simple" />
+	<meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents"
+			/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script   src="http://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="logo-s">
+	<img src="images/smacnew-logo@350.png"/>
+</div>
+<section class="_full-width-row conversationSection" id='conversationSection'>
+	<div id="contentParent" class="responsive-columns-wrapper">
+		<div id="chat-column-holder" class="responsive-column content-column">
+			<div class="chat-column">
+				<div class="chat-column-inside">
+					<div class="main-box">
+						<div class="chat-header">
+							<hr class="line-header"/>
+							<hr class="line-header-with-image"/>
+							<div class="bot-avatar"></div>
+							<div class="bot-info">
+								<span class="bot-info-header">SMACNEW Chatbot</span>
+								<span class="bot-info-body">SMACNEW Digital Advisor, Đà Nẵng, Việt Nam</span>
+								<div class="bot-info-body" style="margin-left:10px">
+									<span style="width:10px"></span>
+									<span>(+84) 935 936 282</span>
+									<span style="margin-left:10px">https://www.smacnew.com/</span>
+								</div>
+							</div>
+						</div>
+						<hr/>
+						<div id="scrollingChat" class='scrollingChat'></div>
+						<p id="loadingChat" class="isTyping"><span><i class="fa fa-pencil" aria-hidden="true"></i> Bot is typing<span id="loadingDots"></span><span></p>
+						<label for="textInputOne" class="inputOutline">
+							<input id="textInputOne" class="base--input query-input"
+										 placeholder="Start typing..." type="text" maxlength="200"
+										 onkeyup="ConversationPanel.inputKeyDown(event, this)">
+							<div class="inputBefore"></div>
+						</label>
+						<div class="div-button">
+							<button class="btn-send" onclick="ConversationPanel.submitInputOnClicked(event, this)">
+								<div class="img-send"/>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="js/jquery-dateFormat.js"></script>
+<script src="js/common.js"></script>
+<script src="js/api.js"></script>
+<script src="js/conversation.js"></script>
+<script src="js/global.js"></script>
+</body>
+</html>

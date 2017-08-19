@@ -1,0 +1,8 @@
+{
+  "name": "API_AI",
+  "main": "server.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "apiai": "^4.0.3"
+  }
+}
