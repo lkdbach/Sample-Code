@@ -1,8 +1,20 @@
 {
   "name": "API_AI",
-  "main": "server.js",
+  "main": "index.js",
   "version": "0.0.1",
   "dependencies": {
-    "apiai": "^4.0.3"
+    "apiai": "^4.0.3",
+    "debug": "~2.6.6",
+    "engine.io": "~3.1.0",
+    "express": "^4.15.4",
+    "http": "0.0.0",
+    "object-assign": "~4.1.1",
+    "socket.io": "^2.0.3",
+    "socket.io-adapter": "~1.1.0",
+    "socket.io-client": "~2.0.2",
+    "socket.io-parser": "~3.1.1"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
